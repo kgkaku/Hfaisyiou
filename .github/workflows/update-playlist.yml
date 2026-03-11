@@ -1,0 +1,119 @@
+name: Update Toffee Playlist
+
+on:
+  # Schedule: Run every 6 hours
+  schedule:
+    - cron: '0 */6 * * *'  # Runs at minute 0 every 6 hours
+  
+  # Allow manual trigger from GitHub UI
+  workflow_dispatch:
+  
+  # Also run on pushes to main branch (when script changes)
+  push:
+    branches: [ main ]
+    paths:
+      - 'scripts/**'
+      - '.github/workflows/**'
+
+# Set permissions for the GITHUB_TOKEN
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  update-playlist:
+    runs-on: ubuntu-latest
+    name: Generate Toffee M3U Playlist
+    timeout-minutes: 10
+    
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      # Step 2: Set up Python
+      - name: Setup Python 3.10
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+          # No need for m3u8 library - we'll parse manually
+      
+      # Step 4: Create necessary directories
+      - name: Create directories
+        run: |
+          mkdir -p playlists
+          mkdir -p logs
+          mkdir -p cache
+      
+      # Step 5: Generate playlist
+      - name: Generate Toffee M3U Playlist
+        id: generate
+        run: |
+          python scripts/toffee_api_working.py
+          
+          # Check if files were generated
+          if [ -f "playlists/toffee_playlist.m3u" ]; then
+            echo "status=success" >> $GITHUB_OUTPUT
+            echo "playlist_size=$(wc -c < playlists/toffee_playlist.m3u)" >> $GITHUB_OUTPUT
+            echo "channel_count=$(grep -c '#EXTINF' playlists/toffee_playlist.m3u)" >> $GITHUB_OUTPUT
+            echo "✅ Playlist generated successfully"
+          else
+            echo "status=failed" >> $GITHUB_OUTPUT
+            echo "❌ Failed to generate playlist"
+            exit 1
+          fi
+        continue-on-error: true
+      
+      # Step 6: Create timestamp file
+      - name: Create timestamp
+        run: |
+          echo "Last updated: $(date -u '+%Y-%m-%d %H:%M:%S UTC')" > playlists/last_updated.txt
+          echo "Channels: ${{ steps.generate.outputs.channel_count }}" >> playlists/last_updated.txt
+          echo "Playlist size: ${{ steps.generate.outputs.playlist_size }} bytes" >> playlists/last_updated.txt
+      
+      # Step 7: Pull latest changes (to avoid conflicts)
+      - name: Pull latest changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git pull --rebase origin main
+        continue-on-error: true
+      
+      # Step 8: Commit and push changes
+      - name: Commit and push changes
+        run: |
+          git add playlists/
+          git add cache/ || true
+          
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Auto-update playlist: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+            git push origin main
+          fi
+      
+      # Step 9: Upload artifacts (for debugging)
+      - name: Get current date for artifact
+        id: date
+        run: echo "date=$(date +'%Y-%m-%d_%H-%M-%S')" >> $GITHUB_OUTPUT
+      
+      - name: Upload playlist artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: toffee-playlists-${{ steps.date.outputs.date }}-${{ github.run_id }}
+          path: |
+            playlists/
+            logs/
+          retention-days: 7
+          overwrite: false
