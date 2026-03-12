@@ -1,21 +1,15 @@
 name: Update Toffee Playlist
 
 on:
-  # Schedule: Run every 6 hours
   schedule:
-    - cron: '0 */6 * * *'  # Runs at minute 0 every 6 hours
-  
-  # Allow manual trigger from GitHub UI
+    - cron: '0 */6 * * *'
   workflow_dispatch:
-  
-  # Also run on pushes to main branch (when script changes)
   push:
     branches: [ main ]
     paths:
       - 'scripts/**'
       - '.github/workflows/**'
 
-# Set permissions for the GITHUB_TOKEN
 permissions:
   contents: write
   pages: write
@@ -25,50 +19,39 @@ jobs:
   update-playlist:
     runs-on: ubuntu-latest
     name: Generate Toffee M3U Playlist
-    timeout-minutes: 15  # Increased timeout for proxy testing
+    timeout-minutes: 15
     
     steps:
-      # Step 1: Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
       
-      # Step 2: Set up Python
       - name: Setup Python 3.10
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
           cache: 'pip'
       
-      # Step 3: Install dependencies
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests beautifulsoup4 lxml
-          # Save dependencies for caching
-          pip freeze > requirements.txt
+          pip install -r requirements.txt
       
-      # Step 4: Create necessary directories
       - name: Create directories
         run: |
           mkdir -p playlists
           mkdir -p logs
-          mkdir -p cache
           mkdir -p proxies
       
-      # Step 5: Generate playlist with auto proxy
       - name: Generate Toffee M3U Playlist
         id: generate
         env:
-          # Optional: Telegram notifications (set these in GitHub Secrets)
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
         run: |
           python scripts/toffee_api.py
           
-          # Check if files were generated
           if [ -f "playlists/toffee_playlist.m3u" ]; then
             CHANNEL_COUNT=$(grep -c '#EXTINF' playlists/toffee_playlist.m3u || true)
             WORKING_COUNT=$(grep -c '#EXTHTTP' playlists/toffee_playlist.m3u || true)
@@ -80,27 +63,16 @@ jobs:
             echo "✅ Playlist generated: $WORKING_COUNT/$CHANNEL_COUNT channels working"
           else
             echo "status=failed" >> $GITHUB_OUTPUT
-            echo "❌ Failed to generate playlist"
             exit 1
           fi
         continue-on-error: true
       
-      # Step 6: Create timestamp file with stats
       - name: Create timestamp
         run: |
           echo "Last updated: $(date -u '+%Y-%m-%d %H:%M:%S UTC')" > playlists/last_updated.txt
           echo "Total channels: ${{ steps.generate.outputs.channel_count }}" >> playlists/last_updated.txt
           echo "Working channels: ${{ steps.generate.outputs.working_count }}" >> playlists/last_updated.txt
-          echo "Playlist size: ${{ steps.generate.outputs.playlist_size }} bytes" >> playlists/last_updated.txt
       
-      # Step 7: Save proxy info for next run
-      - name: Save proxy cache
-        run: |
-          if [ -f "working_proxy.json" ]; then
-            cp working_proxy.json proxies/ || true
-          fi
-      
-      # Step 8: Pull latest changes (to avoid conflicts)
       - name: Pull latest changes
         run: |
           git config --global user.name 'github-actions[bot]'
@@ -108,13 +80,11 @@ jobs:
           git pull --rebase origin main
         continue-on-error: true
       
-      # Step 9: Commit and push changes
       - name: Commit and push changes
         run: |
           git add playlists/
           git add proxies/ || true
           git add logs/ || true
-          git add working_proxy.json || true
           
           if git diff --staged --quiet; then
             echo "No changes to commit"
@@ -123,44 +93,13 @@ jobs:
             git push origin main
           fi
       
-      # Step 10: Upload artifacts for debugging
-      - name: Get current date for artifact
-        id: date
-        run: echo "date=$(date +'%Y-%m-%d_%H-%M-%S')" >> $GITHUB_OUTPUT
-      
-      - name: Upload playlist artifacts
+      - name: Upload artifacts
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: toffee-playlists-${{ steps.date.outputs.date }}-${{ github.run_id }}
+          name: toffee-playlists-${{ github.run_id }}
           path: |
             playlists/
             logs/
             proxies/
-            working_proxy.json
           retention-days: 7
-          overwrite: false
-      
-      # Step 11: Send Telegram notification on failure (optional)
-      - name: Send Telegram notification on failure
-        if: failure() && env.TELEGRAM_BOT_TOKEN != '' && env.TELEGRAM_CHAT_ID != ''
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: |
-          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
-            -d chat_id="${TELEGRAM_CHAT_ID}" \
-            -d text="❌ Toffee playlist update failed at $(date -u '+%Y-%m-%d %H:%M:%S UTC')%0A%0Ahttps://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-      
-      # Step 12: Show summary
-      - name: Show summary
-        run: |
-          echo "## 📊 Playlist Generation Summary" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "- **Status**: ${{ steps.generate.outputs.status }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Total Channels**: ${{ steps.generate.outputs.channel_count }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Working Channels**: ${{ steps.generate.outputs.working_count }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Playlist Size**: ${{ steps.generate.outputs.playlist_size }} bytes" >> $GITHUB_STEP_SUMMARY
-          echo "- **Generated**: $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "📥 [Download Playlist](https://raw.githubusercontent.com/${{ github.repository }}/main/playlists/toffee_playlist.m3u)" >> $GITHUB_STEP_SUMMARY
