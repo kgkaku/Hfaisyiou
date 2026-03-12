@@ -13,6 +13,7 @@ import logging
 from datetime import datetime
 from typing import Dict, List, Optional
 from urllib3.exceptions import InsecureRequestWarning
+from bs4 import BeautifulSoup
 
 # Suppress SSL warnings
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
@@ -65,40 +66,65 @@ class ToffeeAPI:
             "84a2451df95d2eb3d2b0d09c5fc34fb1",
             "36eff4e5ed817e63c4a0859a0e11f1d5",
         ]
+        
+        # Load last working proxy if exists
+        self.load_last_proxy()
+    
+    def load_last_proxy(self):
+        """Load last working proxy from file"""
+        try:
+            if os.path.exists('proxies/working_proxy.json'):
+                with open('proxies/working_proxy.json', 'r') as f:
+                    self.working_proxy = json.load(f)
+                    logger.info(f"✅ Loaded last working proxy: {self.working_proxy['ip']}:{self.working_proxy['port']}")
+        except:
+            pass
     
     def fetch_bd_proxies(self):
-        """Fetch Bangladesh proxies from ProxyDB"""
+        """Fetch Bangladesh proxies from ProxyDB by parsing HTML table"""
         logger.info("🌐 Fetching Bangladesh proxies from ProxyDB...")
         proxies = []
         
         try:
-            # Method 1: Parse the HTML page you found
             response = self.session.get(
                 "https://proxydb.net/?country=BD",
                 timeout=10,
-                headers={'User-Agent': 'Mozilla/5.0'}
+                headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
             )
             
             if response.status_code == 200:
-                # Parse the proxy list from HTML
-                import re
-                # Find all IP:port combinations in the table
-                pattern = r'(\d+\.\d+\.\d+\.\d+)\s+(\d+)\s+(HTTP|HTTPS|SOCKS5)'
-                matches = re.findall(pattern, response.text)
+                soup = BeautifulSoup(response.text, 'html.parser')
                 
-                for ip, port, proxy_type in matches:
-                    proxies.append({
-                        'ip': ip,
-                        'port': int(port),
-                        'type': proxy_type.lower(),
-                        'source': 'proxydb'
-                    })
+                # Find the proxy table
+                table = soup.find('table', {'class': 'table table-striped'})
                 
-                logger.info(f"✅ Found {len(proxies)} proxies from ProxyDB")
-            
-            # Method 2: Try the API if available
-            # Some proxy sites have APIs, but ProxyDB might not
-            
+                if table:
+                    rows = table.find_all('tr')[1:]  # Skip header
+                    
+                    for row in rows:
+                        cols = row.find_all('td')
+                        if len(cols) >= 3:
+                            ip = cols[0].text.strip()
+                            port = cols[1].text.strip()
+                            proxy_type = cols[2].text.strip().lower()
+                            
+                            # Validate IP format
+                            if re.match(r'^\d+\.\d+\.\d+\.\d+$', ip) and port.isdigit():
+                                # Only take HTTP/HTTPS (more reliable)
+                                if proxy_type in ['http', 'https']:
+                                    proxies.append({
+                                        'ip': ip,
+                                        'port': int(port),
+                                        'type': proxy_type,
+                                        'source': 'proxydb'
+                                    })
+                    
+                    logger.info(f"✅ Found {len(proxies)} HTTP/HTTPS proxies from ProxyDB")
+                else:
+                    logger.warning("⚠️ Could not find proxy table")
+            else:
+                logger.warning(f"⚠️ ProxyDB returned {response.status_code}")
+                
         except Exception as e:
             logger.error(f"Error fetching proxies: {e}")
         
@@ -133,9 +159,8 @@ class ToffeeAPI:
         """Find first working proxy from list"""
         logger.info("🔍 Testing proxies...")
         
-        # Sort by type preference (HTTPS first, then HTTP)
-        sorted_proxies = sorted(proxies, 
-                              key=lambda x: 0 if x['type'] == 'https' else 1)
+        # Sort by type preference (HTTPS first)
+        sorted_proxies = sorted(proxies, key=lambda x: 0 if x['type'] == 'https' else 1)
         
         for proxy in sorted_proxies[:20]:  # Test first 20
             if self.test_proxy(proxy):
@@ -143,25 +168,19 @@ class ToffeeAPI:
                 proxy_url = f"{proxy['type']}://{proxy['ip']}:{proxy['port']}"
                 self.session.proxies = {'http': proxy_url, 'https': proxy_url}
                 
-                # Save working proxy for next run
-                with open('working_proxy.json', 'w') as f:
+                # Save working proxy
+                os.makedirs('proxies', exist_ok=True)
+                with open('proxies/working_proxy.json', 'w') as f:
                     json.dump(proxy, f)
                 
                 return True
         
-        # Try loading last working proxy
-        try:
-            if os.path.exists('working_proxy.json'):
-                with open('working_proxy.json', 'r') as f:
-                    last_proxy = json.load(f)
-                    if self.test_proxy(last_proxy):
-                        self.working_proxy = last_proxy
-                        proxy_url = f"{last_proxy['type']}://{last_proxy['ip']}:{last_proxy['port']}"
-                        self.session.proxies = {'http': proxy_url, 'https': proxy_url}
-                        logger.info("✅ Using last working proxy")
-                        return True
-        except:
-            pass
+        # Try last working proxy if no new ones work
+        if self.working_proxy and self.test_proxy(self.working_proxy):
+            proxy_url = f"{self.working_proxy['type']}://{self.working_proxy['ip']}:{self.working_proxy['port']}"
+            self.session.proxies = {'http': proxy_url, 'https': proxy_url}
+            logger.info("✅ Using last working proxy")
+            return True
         
         logger.warning("⚠️ No working proxy found")
         return False
@@ -174,7 +193,6 @@ class ToffeeAPI:
         try:
             response = self.session.get("https://www.toffeelive.com", timeout=10, verify=False)
             if response.status_code == 200:
-                import re
                 found_ids = re.findall(r'[a-f0-9]{32}', response.text)
                 rail_ids.extend([fid for fid in found_ids if fid not in rail_ids])
         except Exception as e:
@@ -350,14 +368,22 @@ def main():
     
     if not proxies:
         logger.error("❌ No proxies found!")
-        return
+        # Try to use last working proxy if available
+        if api.working_proxy:
+            logger.info("🔄 Trying last working proxy...")
+            proxy_url = f"{api.working_proxy['type']}://{api.working_proxy['ip']}:{api.working_proxy['port']}"
+            api.session.proxies = {'http': proxy_url, 'https': proxy_url}
+        else:
+            return
     
     # Step 2: Find a working proxy
-    if not api.find_working_proxy(proxies):
+    if proxies and not api.find_working_proxy(proxies):
         logger.error("❌ No working proxy found!")
-        return
+        if not api.session.proxies:
+            return
     
-    logger.info(f"✅ Using proxy: {api.working_proxy['ip']}:{api.working_proxy['port']}")
+    if api.working_proxy:
+        logger.info(f"✅ Using proxy: {api.working_proxy['ip']}:{api.working_proxy['port']}")
     
     # Step 3: Discover channels (now through proxy)
     rail_ids = api.discover_all_rails()
