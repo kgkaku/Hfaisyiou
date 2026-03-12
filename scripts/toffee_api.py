@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Toffee M3U Playlist Generator - With Auto Proxy Fetching from ProxyDB
+Toffee M3U Playlist Generator - With ProxyScrape API Integration
+Fetches channels and working cookies using Bangladesh proxies
 """
 
 import requests
@@ -13,7 +14,6 @@ import logging
 from datetime import datetime
 from typing import Dict, List, Optional
 from urllib3.exceptions import InsecureRequestWarning
-from bs4 import BeautifulSoup
 
 # Suppress SSL warnings
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
@@ -55,6 +55,9 @@ class ToffeeAPI:
         self.start_time = datetime.now()
         self.working_proxy = None
         
+        # ProxyScrape API key
+        self.proxyscrape_api_key = "EGqcKuQjYyyzLNQp5kXSGFMvDB1gGOWQoBNKSAbrAFoa8TuyfdltjDlCy1SYJw26"
+        
         # Known rail IDs
         self.known_rail_ids = [
             "911e8f640af3a8892b628714d4acc133",
@@ -81,104 +84,281 @@ class ToffeeAPI:
             pass
     
     def fetch_bd_proxies(self):
-        """Fetch Bangladesh proxies from ProxyDB by parsing HTML table"""
-        logger.info("🌐 Fetching Bangladesh proxies from ProxyDB...")
+        """Fetch Bangladesh proxies using ProxyScrape API"""
+        logger.info("🌐 Fetching Bangladesh proxies from ProxyScrape API...")
         proxies = []
         
-        try:
-            response = self.session.get(
-                "https://proxydb.net/?country=BD",
-                timeout=10,
-                headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'}
-            )
-            
-            if response.status_code == 200:
-                soup = BeautifulSoup(response.text, 'html.parser')
+        # ProxyScrape API endpoints
+        endpoints = [
+            # Free proxy lists (no auth required)
+            {
+                'url': f"https://api.proxyscrape.com/v4/free-proxy-list/get?country=BD&protocol=http&timeout=10000",
+                'type': 'free'
+            },
+            {
+                'url': f"https://api.proxyscrape.com/v4/free-proxy-list/get?country=BD&protocol=https&timeout=10000",
+                'type': 'free'
+            },
+            {
+                'url': f"https://api.proxyscrape.com/v4/free-proxy-list/get?country=BD&protocol=socks4&timeout=10000",
+                'type': 'free'
+            },
+            {
+                'url': f"https://api.proxyscrape.com/v4/free-proxy-list/get?country=BD&protocol=socks5&timeout=10000",
+                'type': 'free'
+            },
+            # Legacy API (still works)
+            {
+                'url': f"https://api.proxyscrape.com/?request=getproxies&proxytype=http&timeout=10000&country=BD",
+                'type': 'legacy'
+            },
+            {
+                'url': f"https://api.proxyscrape.com/?request=getproxies&proxytype=https&timeout=10000&country=BD",
+                'type': 'legacy'
+            },
+            {
+                'url': f"https://api.proxyscrape.com/?request=getproxies&proxytype=socks4&timeout=10000&country=BD",
+                'type': 'legacy'
+            },
+            {
+                'url': f"https://api.proxyscrape.com/?request=getproxies&proxytype=socks5&timeout=10000&country=BD",
+                'type': 'legacy'
+            }
+        ]
+        
+        for endpoint in endpoints:
+            try:
+                logger.info(f"🔄 Trying endpoint: {endpoint['url']}")
                 
-                # Find the proxy table
-                table = soup.find('table', {'class': 'table table-striped'})
+                response = self.session.get(
+                    endpoint['url'],
+                    timeout=15,
+                    headers={'User-Agent': 'Mozilla/5.0'}
+                )
                 
-                if table:
-                    rows = table.find_all('tr')[1:]  # Skip header
-                    
-                    for row in rows:
-                        cols = row.find_all('td')
-                        if len(cols) >= 3:
-                            ip = cols[0].text.strip()
-                            port = cols[1].text.strip()
-                            proxy_type = cols[2].text.strip().lower()
-                            
-                            # Validate IP format
-                            if re.match(r'^\d+\.\d+\.\d+\.\d+$', ip) and port.isdigit():
-                                # Only take HTTP/HTTPS (more reliable)
-                                if proxy_type in ['http', 'https']:
+                if response.status_code == 200:
+                    if endpoint['type'] == 'free':
+                        # Parse JSON response
+                        try:
+                            data = response.json()
+                            if 'proxies' in data:
+                                for proxy_data in data['proxies']:
+                                    proxy = {
+                                        'ip': proxy_data.get('ip', ''),
+                                        'port': int(proxy_data.get('port', 0)),
+                                        'type': proxy_data.get('protocol', 'http'),
+                                        'source': 'proxyscrape-api'
+                                    }
+                                    if proxy['ip'] and proxy['port']:
+                                        proxies.append(proxy)
+                        except:
+                            # If JSON parsing fails, try text format
+                            text = response.text
+                            for line in text.strip().split('\n'):
+                                line = line.strip()
+                                if ':' in line:
+                                    ip, port = line.split(':')
+                                    if re.match(r'^\d+\.\d+\.\d+\.\d+$', ip) and port.isdigit():
+                                        proxies.append({
+                                            'ip': ip,
+                                            'port': int(port),
+                                            'type': 'http',
+                                            'source': 'proxyscrape-api'
+                                        })
+                    else:
+                        # Parse legacy format (IP:PORT per line)
+                        text = response.text
+                        for line in text.strip().split('\n'):
+                            line = line.strip()
+                            if ':' in line:
+                                ip, port = line.split(':')
+                                if re.match(r'^\d+\.\d+\.\d+\.\d+$', ip) and port.isdigit():
+                                    proxy_type = endpoint['url'].split('proxytype=')[1].split('&')[0]
                                     proxies.append({
                                         'ip': ip,
                                         'port': int(port),
                                         'type': proxy_type,
-                                        'source': 'proxydb'
+                                        'source': 'proxyscrape-legacy'
                                     })
                     
-                    logger.info(f"✅ Found {len(proxies)} HTTP/HTTPS proxies from ProxyDB")
+                    logger.info(f"✅ Found {len(proxies)} proxies from this endpoint")
+                    
+                elif response.status_code == 401 or response.status_code == 403:
+                    logger.warning(f"⚠️ API authentication failed, trying with API key...")
+                    # Try with API key header for premium endpoints
+                    headers = {'api-token': self.proxyscrape_api_key}
+                    response = self.session.get(endpoint['url'], headers=headers, timeout=15)
+                    if response.status_code == 200:
+                        # Parse similarly
+                        if endpoint['type'] == 'free':
+                            try:
+                                data = response.json()
+                                if 'proxies' in data:
+                                    for proxy_data in data['proxies']:
+                                        proxy = {
+                                            'ip': proxy_data.get('ip', ''),
+                                            'port': int(proxy_data.get('port', 0)),
+                                            'type': proxy_data.get('protocol', 'http'),
+                                            'source': 'proxyscrape-api-auth'
+                                        }
+                                        if proxy['ip'] and proxy['port']:
+                                            proxies.append(proxy)
+                            except:
+                                pass
                 else:
-                    logger.warning("⚠️ Could not find proxy table")
-            else:
-                logger.warning(f"⚠️ ProxyDB returned {response.status_code}")
-                
-        except Exception as e:
-            logger.error(f"Error fetching proxies: {e}")
+                    logger.warning(f"⚠️ Endpoint returned {response.status_code}")
+                    
+            except Exception as e:
+                logger.debug(f"Endpoint failed: {e}")
+                continue
+            
+            time.sleep(1)  # Rate limiting
         
-        return proxies
+        # Remove duplicates
+        unique_proxies = []
+        seen = set()
+        for p in proxies:
+            key = f"{p['ip']}:{p['port']}"
+            if key not in seen:
+                seen.add(key)
+                unique_proxies.append(p)
+        
+        logger.info(f"✅ Total unique proxies found: {len(unique_proxies)}")
+        
+        # If still no proxies, use fallback
+        if not unique_proxies:
+            logger.warning("⚠️ No proxies from API, using fallback list")
+            unique_proxies = self.get_fallback_proxies()
+        
+        return unique_proxies
+    
+    def get_fallback_proxies(self):
+        """Hardcoded Bangladesh proxies as last resort"""
+        return [
+            {'ip': '103.134.12.34', 'port': 8080, 'type': 'http', 'source': 'fallback'},
+            {'ip': '103.141.139.98', 'port': 8080, 'type': 'http', 'source': 'fallback'},
+            {'ip': '103.152.142.162', 'port': 8080, 'type': 'http', 'source': 'fallback'},
+            {'ip': '103.217.142.66', 'port': 8080, 'type': 'http', 'source': 'fallback'},
+            {'ip': '103.189.218.85', 'port': 6969, 'type': 'socks5', 'source': 'fallback'},
+            {'ip': '119.148.51.42', 'port': 22122, 'type': 'socks5', 'source': 'fallback'},
+            {'ip': '203.76.98.21', 'port': 45958, 'type': 'http', 'source': 'fallback'},
+            {'ip': '202.5.37.104', 'port': 17382, 'type': 'http', 'source': 'fallback'},
+            {'ip': '115.127.95.82', 'port': 8080, 'type': 'http', 'source': 'fallback'},
+            {'ip': '103.171.233.72', 'port': 8080, 'type': 'http', 'source': 'fallback'},
+        ]
     
     def test_proxy(self, proxy):
         """Test if proxy works with Toffee"""
-        proxy_url = f"{proxy['type']}://{proxy['ip']}:{proxy['port']}"
+        proxy_type = proxy['type'].lower()
         
-        # Create a new session for testing
-        test_session = requests.Session()
-        test_session.proxies = {'http': proxy_url, 'https': proxy_url}
-        test_session.headers.update(self.session.headers)
+        # For SOCKS proxies
+        if proxy_type.startswith('socks'):
+            try:
+                # Try to import pysocks
+                import socks
+                import socket
+                
+                # Save original socket
+                original_socket = socket.socket
+                
+                # Set SOCKS proxy
+                if '5' in proxy_type:
+                    socks.set_default_proxy(socks.SOCKS5, proxy['ip'], proxy['port'])
+                else:
+                    socks.set_default_proxy(socks.SOCKS4, proxy['ip'], proxy['port'])
+                
+                socket.socket = socks.socksocket
+                
+                # Test connection
+                test_session = requests.Session()
+                test_session.headers.update(self.session.headers)
+                response = test_session.get(
+                    "https://www.toffeelive.com",
+                    timeout=10,
+                    verify=False
+                )
+                
+                # Restore original socket
+                socket.socket = original_socket
+                
+                if response.status_code == 200:
+                    logger.info(f"✅ SOCKS proxy {proxy['ip']}:{proxy['port']} works")
+                    return True
+                else:
+                    # Restore on failure
+                    socket.socket = original_socket
+                    
+            except ImportError:
+                logger.debug("pysocks not installed, skipping SOCKS proxy test")
+                return False
+            except Exception as e:
+                # Restore on error
+                try:
+                    import socket
+                    socket.socket = socket._socketobject
+                except:
+                    pass
+                logger.debug(f"SOCKS proxy {proxy['ip']} failed: {e}")
+                return False
         
-        try:
-            # Test with a simple request to Toffee
-            response = test_session.get(
-                "https://www.toffeelive.com",
-                timeout=5,
-                verify=False
-            )
+        # For HTTP/HTTPS proxies
+        else:
+            proxy_url = f"{proxy_type}://{proxy['ip']}:{proxy['port']}"
+            test_session = requests.Session()
+            test_session.proxies = {'http': proxy_url, 'https': proxy_url}
+            test_session.headers.update(self.session.headers)
             
-            if response.status_code == 200:
-                logger.info(f"✅ Proxy {proxy['ip']}:{proxy['port']} works")
-                return True
-        except Exception as e:
-            logger.debug(f"Proxy {proxy['ip']} failed: {e}")
-        
-        return False
+            try:
+                response = test_session.get(
+                    "https://www.toffeelive.com",
+                    timeout=5,
+                    verify=False
+                )
+                if response.status_code == 200:
+                    logger.info(f"✅ HTTP proxy {proxy['ip']}:{proxy['port']} works")
+                    return True
+            except Exception as e:
+                logger.debug(f"HTTP proxy {proxy['ip']} failed: {e}")
+            
+            return False
     
     def find_working_proxy(self, proxies):
         """Find first working proxy from list"""
         logger.info("🔍 Testing proxies...")
         
-        # Sort by type preference (HTTPS first)
-        sorted_proxies = sorted(proxies, key=lambda x: 0 if x['type'] == 'https' else 1)
+        # Sort by type preference (HTTPS first, then HTTP, then SOCKS)
+        def proxy_score(p):
+            if p['type'] == 'https':
+                return 0
+            elif p['type'] == 'http':
+                return 1
+            else:
+                return 2
         
-        for proxy in sorted_proxies[:20]:  # Test first 20
+        sorted_proxies = sorted(proxies, key=proxy_score)
+        
+        for proxy in sorted_proxies[:30]:  # Test first 30
             if self.test_proxy(proxy):
                 self.working_proxy = proxy
-                proxy_url = f"{proxy['type']}://{proxy['ip']}:{proxy['port']}"
-                self.session.proxies = {'http': proxy_url, 'https': proxy_url}
+                
+                # Set up session with working proxy
+                if not proxy['type'].startswith('socks'):
+                    proxy_url = f"{proxy['type']}://{proxy['ip']}:{proxy['port']}"
+                    self.session.proxies = {'http': proxy_url, 'https': proxy_url}
                 
                 # Save working proxy
                 os.makedirs('proxies', exist_ok=True)
                 with open('proxies/working_proxy.json', 'w') as f:
                     json.dump(proxy, f)
                 
+                logger.info(f"✅ Using proxy: {proxy['ip']}:{proxy['port']} ({proxy['type']})")
                 return True
         
         # Try last working proxy if no new ones work
         if self.working_proxy and self.test_proxy(self.working_proxy):
-            proxy_url = f"{self.working_proxy['type']}://{self.working_proxy['ip']}:{self.working_proxy['port']}"
-            self.session.proxies = {'http': proxy_url, 'https': proxy_url}
+            if not self.working_proxy['type'].startswith('socks'):
+                proxy_url = f"{self.working_proxy['type']}://{self.working_proxy['ip']}:{self.working_proxy['port']}"
+                self.session.proxies = {'http': proxy_url, 'https': proxy_url}
             logger.info("✅ Using last working proxy")
             return True
         
@@ -303,6 +483,7 @@ class ToffeeAPI:
         
         successful = 0
         failed = 0
+        channels_with_cookies = []
         
         with open(filename, 'w', encoding='utf-8') as f:
             # Header
@@ -327,6 +508,7 @@ class ToffeeAPI:
                 
                 if cookie:
                     successful += 1
+                    channels_with_cookies.append(channel['name'])
                     
                     # Prepare tags
                     tags = [
@@ -353,12 +535,15 @@ class ToffeeAPI:
         logger.info(f"✅ Playlist generated: {filename}")
         logger.info(f"📊 Working: {successful}, Failed: {failed}")
         
+        if channels_with_cookies:
+            logger.info(f"✅ Working channels: {', '.join(channels_with_cookies[:10])}...")
+        
         return successful, failed
 
 def main():
     """Main function"""
     logger.info("="*60)
-    logger.info("🎬 TOFFEE PLAYLIST GENERATOR - WITH AUTO PROXY")
+    logger.info("🎬 TOFFEE PLAYLIST GENERATOR - WITH PROXYSCRAPE API")
     logger.info("="*60)
     
     api = ToffeeAPI()
@@ -367,23 +552,15 @@ def main():
     proxies = api.fetch_bd_proxies()
     
     if not proxies:
-        logger.error("❌ No proxies found!")
-        # Try to use last working proxy if available
-        if api.working_proxy:
-            logger.info("🔄 Trying last working proxy...")
-            proxy_url = f"{api.working_proxy['type']}://{api.working_proxy['ip']}:{api.working_proxy['port']}"
-            api.session.proxies = {'http': proxy_url, 'https': proxy_url}
-        else:
-            return
+        logger.error("❌ No proxies found from any source!")
+        return
+    
+    logger.info(f"📋 Total proxies to test: {len(proxies)}")
     
     # Step 2: Find a working proxy
-    if proxies and not api.find_working_proxy(proxies):
+    if not api.find_working_proxy(proxies):
         logger.error("❌ No working proxy found!")
-        if not api.session.proxies:
-            return
-    
-    if api.working_proxy:
-        logger.info(f"✅ Using proxy: {api.working_proxy['ip']}:{api.working_proxy['port']}")
+        return
     
     # Step 3: Discover channels (now through proxy)
     rail_ids = api.discover_all_rails()
@@ -394,7 +571,7 @@ def main():
             api.extract_channels_from_rail(items)
         time.sleep(0.5)
     
-    logger.info(f"📺 Total channels: {len(api.channels)}")
+    logger.info(f"📺 Total channels found: {len(api.channels)}")
     
     # Step 4: Generate playlist with cookies
     if api.channels:
@@ -406,6 +583,9 @@ def main():
             logger.warning("⚠️ No cookies obtained - proxy might not be from Bangladesh")
     else:
         logger.error("❌ No channels found!")
+    
+    runtime = datetime.now() - api.start_time
+    logger.info(f"⏱️ Runtime: {runtime.total_seconds():.2f} seconds")
 
 if __name__ == "__main__":
     main()
