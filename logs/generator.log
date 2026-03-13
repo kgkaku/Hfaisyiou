@@ -287,3 +287,29 @@
 2026-03-13 06:45:25,444 - INFO - 🔍 Testing proxies...
 2026-03-13 06:47:07,382 - WARNING - ⚠️ No working proxy found
 2026-03-13 06:47:07,382 - ERROR - ❌ No working proxy found!
+2026-03-13 12:47:05,896 - INFO - ============================================================
+2026-03-13 12:47:05,897 - INFO - 🎬 TOFFEE PLAYLIST GENERATOR - WITH PROXYSCRAPE API
+2026-03-13 12:47:05,897 - INFO - ============================================================
+2026-03-13 12:47:05,897 - INFO - ✅ Loaded last working proxy: 119.148.55.89:9108
+2026-03-13 12:47:05,897 - INFO - 🌐 Fetching Bangladesh proxies from ProxyScrape API...
+2026-03-13 12:47:05,897 - INFO - 🔄 Trying endpoint: https://api.proxyscrape.com/v4/free-proxy-list/get?country=BD&protocol=http&timeout=10000
+2026-03-13 12:47:06,489 - WARNING - ⚠️ Endpoint returned 400
+2026-03-13 12:47:07,490 - INFO - 🔄 Trying endpoint: https://api.proxyscrape.com/v4/free-proxy-list/get?country=BD&protocol=https&timeout=10000
+2026-03-13 12:47:07,741 - WARNING - ⚠️ Endpoint returned 400
+2026-03-13 12:47:08,742 - INFO - 🔄 Trying endpoint: https://api.proxyscrape.com/v4/free-proxy-list/get?country=BD&protocol=socks4&timeout=10000
+2026-03-13 12:47:08,958 - WARNING - ⚠️ Endpoint returned 400
+2026-03-13 12:47:09,960 - INFO - 🔄 Trying endpoint: https://api.proxyscrape.com/v4/free-proxy-list/get?country=BD&protocol=socks5&timeout=10000
+2026-03-13 12:47:10,192 - WARNING - ⚠️ Endpoint returned 400
+2026-03-13 12:47:11,193 - INFO - 🔄 Trying endpoint: https://api.proxyscrape.com/?request=getproxies&proxytype=http&timeout=10000&country=BD
+2026-03-13 12:47:11,399 - INFO - ✅ Found 40 proxies from this endpoint
+2026-03-13 12:47:12,401 - INFO - 🔄 Trying endpoint: https://api.proxyscrape.com/?request=getproxies&proxytype=https&timeout=10000&country=BD
+2026-03-13 12:47:12,597 - INFO - ✅ Found 83 proxies from this endpoint
+2026-03-13 12:47:13,598 - INFO - 🔄 Trying endpoint: https://api.proxyscrape.com/?request=getproxies&proxytype=socks4&timeout=10000&country=BD
+2026-03-13 12:47:13,791 - INFO - ✅ Found 88 proxies from this endpoint
+2026-03-13 12:47:14,793 - INFO - 🔄 Trying endpoint: https://api.proxyscrape.com/?request=getproxies&proxytype=socks5&timeout=10000&country=BD
+2026-03-13 12:47:14,999 - INFO - ✅ Found 88 proxies from this endpoint
+2026-03-13 12:47:16,000 - INFO - ✅ Total unique proxies found: 45
+2026-03-13 12:47:16,001 - INFO - 📋 Total proxies to test: 45
+2026-03-13 12:47:16,001 - INFO - 🔍 Testing proxies...
+2026-03-13 12:48:45,332 - WARNING - ⚠️ No working proxy found
+2026-03-13 12:48:45,332 - ERROR - ❌ No working proxy found!
