@@ -762,3 +762,13 @@
 2026-03-21 12:37:55,965 - INFO - 🔍 Testing 4 proxies with Toffee...
 2026-03-21 12:38:13,121 - WARNING - ⚠️ No working proxy found
 2026-03-21 12:38:13,121 - ERROR - ❌ No working proxy found!
+2026-03-21 18:29:46,181 - INFO - ============================================================
+2026-03-21 18:29:46,181 - INFO - 🎬 TOFFEE PLAYLIST GENERATOR - GITHUB PROXY SOURCE
+2026-03-21 18:29:46,181 - INFO - ============================================================
+2026-03-21 18:29:46,181 - INFO - ✅ Loaded last working proxy: 103.148.178.10:80
+2026-03-21 18:29:46,181 - INFO - 🌐 Fetching Bangladesh proxies from GitHub...
+2026-03-21 18:29:46,321 - INFO - ✅ Found 3 HTTP/HTTPS proxies from GitHub
+2026-03-21 18:29:46,321 - INFO - 📋 Total proxies to test: 3
+2026-03-21 18:29:46,321 - INFO - 🔍 Testing 3 proxies with Toffee...
+2026-03-21 18:30:01,717 - WARNING - ⚠️ No working proxy found
+2026-03-21 18:30:01,717 - ERROR - ❌ No working proxy found!
