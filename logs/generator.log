@@ -1186,3 +1186,13 @@
 2026-03-28 18:35:08,893 - INFO - 📺 Total channels found: 0
 2026-03-28 18:35:08,893 - ERROR - ❌ No channels found!
 2026-03-28 18:35:08,893 - INFO - ⏱️ Runtime: 106.20 seconds
+2026-03-29 01:59:11,915 - INFO - ============================================================
+2026-03-29 01:59:11,915 - INFO - 🎬 TOFFEE PLAYLIST GENERATOR - GITHUB PROXY SOURCE
+2026-03-29 01:59:11,915 - INFO - ============================================================
+2026-03-29 01:59:11,915 - INFO - ✅ Loaded last working proxy: 120.50.10.106:5555
+2026-03-29 01:59:11,915 - INFO - 🌐 Fetching Bangladesh proxies from GitHub...
+2026-03-29 01:59:11,988 - INFO - ✅ Found 3 HTTP/HTTPS proxies from GitHub
+2026-03-29 01:59:11,989 - INFO - 📋 Total proxies to test: 3
+2026-03-29 01:59:11,989 - INFO - 🔍 Testing 3 proxies with Toffee...
+2026-03-29 01:59:22,913 - WARNING - ⚠️ No working proxy found
+2026-03-29 01:59:22,913 - ERROR - ❌ No working proxy found!
