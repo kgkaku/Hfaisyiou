@@ -1396,3 +1396,158 @@
 2026-04-03 12:53:50,956 - INFO - 🔍 Testing 3 proxies with Toffee...
 2026-04-03 12:54:01,977 - WARNING - ⚠️ No working proxy found
 2026-04-03 12:54:01,977 - ERROR - ❌ No working proxy found!
+2026-04-03 18:39:25,272 - INFO - ============================================================
+2026-04-03 18:39:25,272 - INFO - 🎬 TOFFEE PLAYLIST GENERATOR - GITHUB PROXY SOURCE
+2026-04-03 18:39:25,272 - INFO - ============================================================
+2026-04-03 18:39:25,272 - INFO - ✅ Loaded last working proxy: 120.50.10.106:5555
+2026-04-03 18:39:25,272 - INFO - 🌐 Fetching Bangladesh proxies from GitHub...
+2026-04-03 18:39:25,357 - INFO - ✅ Found 4 HTTP/HTTPS proxies from GitHub
+2026-04-03 18:39:25,357 - INFO - 📋 Total proxies to test: 4
+2026-04-03 18:39:25,357 - INFO - 🔍 Testing 4 proxies with Toffee...
+2026-04-03 18:39:36,546 - INFO - ✅ Proxy 115.84.169.253:8084 works with Toffee
+2026-04-03 18:39:36,546 - INFO - 🎯 Using proxy: 115.84.169.253:8084 (http)
+2026-04-03 18:39:36,546 - INFO - 🔍 Discovering content rails...
+2026-04-03 18:39:53,421 - INFO - 📋 Found 8 potential rail IDs
+2026-04-03 18:40:36,089 - INFO - ✅ Rail cb7ea308... has 5 items
+2026-04-03 18:40:36,090 - INFO - 📺 Found: Jamuna TV
+2026-04-03 18:40:36,090 - INFO - 📺 Found: Somoy TV
+2026-04-03 18:40:36,090 - INFO - 📺 Found: Ekattor TV
+2026-04-03 18:40:36,090 - INFO - 📺 Found: CNN
+2026-04-03 18:40:36,090 - INFO - 📺 Found: Independent TV
+2026-04-03 18:40:37,147 - INFO - ✅ Rail cceb01a3... has 11 items
+2026-04-03 18:40:37,148 - INFO - 📺 Found: Sony MAX 2
+2026-04-03 18:40:37,148 - INFO - 📺 Found: Sony MAX HD
+2026-04-03 18:40:37,148 - INFO - 📺 Found: Sony MAX
+2026-04-03 18:40:37,148 - INFO - 📺 Found: Sony PIX HD
+2026-04-03 18:40:37,148 - INFO - 📺 Found: B4U Movies APAC
+2026-04-03 18:40:37,148 - INFO - 📺 Found: & Pictures HD
+2026-04-03 18:40:37,148 - INFO - 📺 Found: Toffee Movies
+2026-04-03 18:40:37,148 - INFO - 📺 Found: Zee Bangla Cinema
+2026-04-03 18:40:37,148 - INFO - 📺 Found: Zee Cinema HD
+2026-04-03 18:40:37,148 - INFO - 📺 Found: Zee Action
+2026-04-03 18:40:37,148 - INFO - 📺 Found: Zee Bollywood
+2026-04-03 18:40:38,201 - INFO - ✅ Rail be7d4285... has 12 items
+2026-04-03 18:40:38,202 - INFO - 📺 Found: Zing
+2026-04-03 18:40:38,202 - INFO - 📺 Found: Zee Bangla
+2026-04-03 18:40:38,202 - INFO - 📺 Found: HUM
+2026-04-03 18:40:38,202 - INFO - 📺 Found: HUM Sitaray
+2026-04-03 18:40:38,202 - INFO - 📺 Found: HUM Masala
+2026-04-03 18:40:38,202 - INFO - 📺 Found: Sony Aath
+2026-04-03 18:40:38,202 - INFO - 📺 Found: B4U Music
+2026-04-03 18:40:38,202 - INFO - 📺 Found: Sony Entertainment Television
+2026-04-03 18:40:38,202 - INFO - 📺 Found: Sony Entertainment Television HD
+2026-04-03 18:40:38,202 - INFO - 📺 Found: Sony SAB HD
+2026-04-03 18:40:38,202 - INFO - 📺 Found: Zee TV HD
+2026-04-03 18:40:38,202 - INFO - 📺 Found: &TV HD
+2026-04-03 18:40:39,265 - INFO - ✅ Rail 84a2451d... has 11 items
+2026-04-03 18:40:39,266 - INFO - 📺 Found: Ekhon TV
+2026-04-03 18:40:39,266 - INFO - 📺 Found: TLC
+2026-04-03 18:40:39,266 - INFO - 📺 Found: TLC HD
+2026-04-03 18:40:39,266 - INFO - 📺 Found: Animal Planet HD
+2026-04-03 18:40:39,266 - INFO - 📺 Found: Animal Planet
+2026-04-03 18:40:39,266 - INFO - 📺 Found: Sony BBC Earth HD
+2026-04-03 18:40:39,266 - INFO - 📺 Found: Discovery HD
+2026-04-03 18:40:39,266 - INFO - 📺 Found: Discovery
+2026-04-03 18:40:39,266 - INFO - 📺 Found: Discovery Science
+2026-04-03 18:40:39,266 - INFO - 📺 Found: Discovery Turbo
+2026-04-03 18:40:39,266 - INFO - 📺 Found: Investigation Discovery HD
+2026-04-03 18:40:40,322 - INFO - ✅ Rail 36eff4e5... has 5 items
+2026-04-03 18:40:40,322 - INFO - 📺 Found: Cartoon Network HD +
+2026-04-03 18:40:40,322 - INFO - 📺 Found: Cartoon Network
+2026-04-03 18:40:40,322 - INFO - 📺 Found: POGO
+2026-04-03 18:40:40,322 - INFO - 📺 Found: Discovery Kids
+2026-04-03 18:40:40,322 - INFO - 📺 Found: Sony YAY
+2026-04-03 18:40:40,823 - INFO - 📺 Total channels found: 44
+2026-04-03 18:40:40,823 - INFO - 📝 Generating playlist: playlists/toffee_playlist.m3u
+2026-04-03 18:40:40,823 - INFO - 🔄 Processing 1/44: Jamuna TV
+2026-04-03 18:40:50,322 - WARNING - ❌ No cookie for Jamuna TV
+2026-04-03 18:40:50,322 - INFO - 🔄 Processing 2/44: Somoy TV
+2026-04-03 18:41:05,438 - WARNING - ❌ No cookie for Somoy TV
+2026-04-03 18:41:05,439 - INFO - 🔄 Processing 3/44: Ekattor TV
+2026-04-03 18:41:32,907 - WARNING - ❌ No cookie for Ekattor TV
+2026-04-03 18:41:32,907 - INFO - 🔄 Processing 4/44: CNN
+2026-04-03 18:41:45,523 - WARNING - ❌ No cookie for CNN
+2026-04-03 18:41:45,524 - INFO - 🔄 Processing 5/44: Independent TV
+2026-04-03 18:42:05,545 - WARNING - ❌ No cookie for Independent TV
+2026-04-03 18:42:05,545 - INFO - 🔄 Processing 6/44: Sony MAX 2
+2026-04-03 18:42:17,621 - WARNING - ❌ No cookie for Sony MAX 2
+2026-04-03 18:42:17,621 - INFO - 🔄 Processing 7/44: Sony MAX HD
+2026-04-03 18:42:37,643 - WARNING - ❌ No cookie for Sony MAX HD
+2026-04-03 18:42:37,643 - INFO - 🔄 Processing 8/44: Sony MAX
+2026-04-03 18:42:57,666 - WARNING - ❌ No cookie for Sony MAX
+2026-04-03 18:42:57,666 - INFO - 🔄 Processing 9/44: Sony PIX HD
+2026-04-03 18:43:23,572 - WARNING - ❌ No cookie for Sony PIX HD
+2026-04-03 18:43:23,572 - INFO - 🔄 Processing 10/44: B4U Movies APAC
+2026-04-03 18:43:44,629 - WARNING - ❌ No cookie for B4U Movies APAC
+2026-04-03 18:43:44,629 - INFO - 🔄 Processing 11/44: & Pictures HD
+2026-04-03 18:44:09,341 - WARNING - ❌ No cookie for & Pictures HD
+2026-04-03 18:44:09,341 - INFO - 🔄 Processing 12/44: Toffee Movies
+2026-04-03 18:44:15,746 - WARNING - ❌ No cookie for Toffee Movies
+2026-04-03 18:44:15,746 - INFO - 🔄 Processing 13/44: Zee Bangla Cinema
+2026-04-03 18:44:28,894 - WARNING - ❌ No cookie for Zee Bangla Cinema
+2026-04-03 18:44:28,895 - INFO - 🔄 Processing 14/44: Zee Cinema HD
+2026-04-03 18:44:52,802 - WARNING - ❌ No cookie for Zee Cinema HD
+2026-04-03 18:44:52,802 - INFO - 🔄 Processing 15/44: Zee Action
+2026-04-03 18:45:07,447 - WARNING - ❌ No cookie for Zee Action
+2026-04-03 18:45:07,447 - INFO - 🔄 Processing 16/44: Zee Bollywood
+2026-04-03 18:45:21,184 - WARNING - ❌ No cookie for Zee Bollywood
+2026-04-03 18:45:21,184 - INFO - 🔄 Processing 17/44: Zing
+2026-04-03 18:45:34,705 - WARNING - ❌ No cookie for Zing
+2026-04-03 18:45:34,705 - INFO - 🔄 Processing 18/44: Zee Bangla
+2026-04-03 18:45:52,046 - WARNING - ❌ No cookie for Zee Bangla
+2026-04-03 18:45:52,046 - INFO - 🔄 Processing 19/44: HUM
+2026-04-03 18:46:08,067 - WARNING - ❌ No cookie for HUM
+2026-04-03 18:46:08,067 - INFO - 🔄 Processing 20/44: HUM Sitaray
+2026-04-03 18:46:18,174 - WARNING - ❌ No cookie for HUM Sitaray
+2026-04-03 18:46:18,174 - INFO - 🔄 Processing 21/44: HUM Masala
+2026-04-03 18:46:38,197 - WARNING - ❌ No cookie for HUM Masala
+2026-04-03 18:46:38,197 - INFO - 🔄 Processing 22/44: Sony Aath
+2026-04-03 18:46:58,220 - WARNING - ❌ No cookie for Sony Aath
+2026-04-03 18:46:58,220 - INFO - 🔄 Processing 23/44: B4U Music
+2026-04-03 18:47:18,489 - WARNING - ❌ No cookie for B4U Music
+2026-04-03 18:47:18,489 - INFO - 🔄 Processing 24/44: Sony Entertainment Television
+2026-04-03 18:47:33,532 - WARNING - ❌ No cookie for Sony Entertainment Television
+2026-04-03 18:47:33,532 - INFO - 🔄 Processing 25/44: Sony Entertainment Television HD
+2026-04-03 18:47:57,929 - WARNING - ❌ No cookie for Sony Entertainment Television HD
+2026-04-03 18:47:57,929 - INFO - 🔄 Processing 26/44: Sony SAB HD
+2026-04-03 18:48:15,536 - WARNING - ❌ No cookie for Sony SAB HD
+2026-04-03 18:48:15,537 - INFO - 🔄 Processing 27/44: Zee TV HD
+2026-04-03 18:48:23,239 - WARNING - ❌ No cookie for Zee TV HD
+2026-04-03 18:48:23,239 - INFO - 🔄 Processing 28/44: &TV HD
+2026-04-03 18:48:36,947 - WARNING - ❌ No cookie for &TV HD
+2026-04-03 18:48:36,947 - INFO - 🔄 Processing 29/44: Ekhon TV
+2026-04-03 18:48:42,675 - WARNING - ❌ No cookie for Ekhon TV
+2026-04-03 18:48:42,675 - INFO - 🔄 Processing 30/44: TLC
+2026-04-03 18:48:59,966 - WARNING - ❌ No cookie for TLC
+2026-04-03 18:48:59,966 - INFO - 🔄 Processing 31/44: TLC HD
+2026-04-03 18:49:35,126 - WARNING - ❌ No cookie for TLC HD
+2026-04-03 18:49:35,126 - INFO - 🔄 Processing 32/44: Animal Planet HD
+2026-04-03 18:49:48,826 - WARNING - ❌ No cookie for Animal Planet HD
+2026-04-03 18:49:48,827 - INFO - 🔄 Processing 33/44: Animal Planet
+2026-04-03 18:50:08,849 - WARNING - ❌ No cookie for Animal Planet
+2026-04-03 18:50:08,849 - INFO - 🔄 Processing 34/44: Sony BBC Earth HD
+2026-04-03 18:50:28,877 - WARNING - ❌ No cookie for Sony BBC Earth HD
+2026-04-03 18:50:28,877 - INFO - 🔄 Processing 35/44: Discovery HD
+2026-04-03 18:50:48,900 - WARNING - ❌ No cookie for Discovery HD
+2026-04-03 18:50:48,900 - INFO - 🔄 Processing 36/44: Discovery
+2026-04-03 18:51:07,233 - WARNING - ❌ No cookie for Discovery
+2026-04-03 18:51:07,233 - INFO - 🔄 Processing 37/44: Discovery Science
+2026-04-03 18:51:27,256 - WARNING - ❌ No cookie for Discovery Science
+2026-04-03 18:51:27,256 - INFO - 🔄 Processing 38/44: Discovery Turbo
+2026-04-03 18:51:42,695 - WARNING - ❌ No cookie for Discovery Turbo
+2026-04-03 18:51:42,695 - INFO - 🔄 Processing 39/44: Investigation Discovery HD
+2026-04-03 18:51:54,128 - WARNING - ❌ No cookie for Investigation Discovery HD
+2026-04-03 18:51:54,128 - INFO - 🔄 Processing 40/44: Cartoon Network HD +
+2026-04-03 18:52:15,396 - WARNING - ❌ No cookie for Cartoon Network HD +
+2026-04-03 18:52:15,396 - INFO - 🔄 Processing 41/44: Cartoon Network
+2026-04-03 18:52:34,296 - WARNING - ❌ No cookie for Cartoon Network
+2026-04-03 18:52:34,296 - INFO - 🔄 Processing 42/44: POGO
+2026-04-03 18:52:58,639 - WARNING - ❌ No cookie for POGO
+2026-04-03 18:52:58,639 - INFO - 🔄 Processing 43/44: Discovery Kids
+2026-04-03 18:53:18,662 - WARNING - ❌ No cookie for Discovery Kids
+2026-04-03 18:53:18,662 - INFO - 🔄 Processing 44/44: Sony YAY
+2026-04-03 18:53:38,684 - WARNING - ❌ No cookie for Sony YAY
+2026-04-03 18:53:38,685 - INFO - ✅ Playlist generated: playlists/toffee_playlist.m3u
+2026-04-03 18:53:38,685 - INFO - 📊 Working: 0, Failed: 44
+2026-04-03 18:53:38,685 - WARNING - ⚠️ No cookies obtained - proxy might not be from Bangladesh
+2026-04-03 18:53:38,685 - INFO - ⏱️ Runtime: 853.41 seconds
