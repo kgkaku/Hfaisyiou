@@ -2920,3 +2920,416 @@
 2026-04-13 02:10:03,771 - INFO - 🔍 Testing 4 proxies with Toffee...
 2026-04-13 02:10:19,738 - WARNING - ⚠️ No working proxy found
 2026-04-13 02:10:19,738 - ERROR - ❌ No working proxy found!
+2026-04-13 07:55:21,254 - INFO - ============================================================
+2026-04-13 07:55:21,254 - INFO - 🎬 TOFFEE PLAYLIST GENERATOR - GITHUB PROXY SOURCE
+2026-04-13 07:55:21,254 - INFO - ============================================================
+2026-04-13 07:55:21,254 - INFO - ✅ Loaded last working proxy: 202.40.186.66:43773
+2026-04-13 07:55:21,254 - INFO - 🌐 Fetching Bangladesh proxies from GitHub...
+2026-04-13 07:55:21,348 - INFO - ✅ Found 7 HTTP/HTTPS proxies from GitHub
+2026-04-13 07:55:21,349 - INFO - 📋 Total proxies to test: 7
+2026-04-13 07:55:21,349 - INFO - 🔍 Testing 7 proxies with Toffee...
+2026-04-13 07:55:52,765 - INFO - ✅ Proxy 202.40.186.66:43773 works with Toffee
+2026-04-13 07:55:52,765 - INFO - ✅ Using last working proxy
+2026-04-13 07:55:52,765 - INFO - 🔍 Discovering content rails...
+2026-04-13 07:55:57,489 - INFO - 📋 Found 26 potential rail IDs
+2026-04-13 07:55:59,623 - INFO - ✅ Rail 911e8f64... has 12 items
+2026-04-13 07:55:59,623 - INFO - 📺 Found: Channel i
+2026-04-13 07:55:59,624 - INFO - 📺 Found: Nexus TV
+2026-04-13 07:55:59,624 - INFO - 📺 Found: Channel S
+2026-04-13 07:55:59,624 - INFO - 📺 Found: Movie Bangla
+2026-04-13 07:55:59,624 - INFO - 📺 Found: Asian TV
+2026-04-13 07:55:59,624 - INFO - 📺 Found: Mohona TV
+2026-04-13 07:55:59,624 - INFO - 📺 Found: Desh TV
+2026-04-13 07:55:59,624 - INFO - 📺 Found: Jamuna TV
+2026-04-13 07:55:59,624 - INFO - 📺 Found: Bangla TV
+2026-04-13 07:55:59,624 - INFO - 📺 Found: Ekattor TV
+2026-04-13 07:55:59,624 - INFO - 📺 Found: Somoy TV
+2026-04-13 07:55:59,624 - INFO - 📺 Found: Global TV
+2026-04-13 07:56:00,728 - INFO - ✅ Rail 55fdb2be... has 6 items
+2026-04-13 07:56:00,728 - INFO - 📺 Found: EPL channel 1
+2026-04-13 07:56:00,728 - INFO - 📺 Found: EPL channel 2
+2026-04-13 07:56:00,728 - INFO - 📺 Found: EPL channel 3
+2026-04-13 07:56:00,728 - INFO - 📺 Found: EPL Channel 4
+2026-04-13 07:56:00,728 - INFO - 📺 Found: EPL Channel 5
+2026-04-13 07:56:00,728 - INFO - 📺 Found: EPL Channel 6
+2026-04-13 07:56:01,833 - INFO - ✅ Rail 08d90cec... has 8 items
+2026-04-13 07:56:01,833 - INFO - 📺 Found: Sony Ten Sports 2 HD
+2026-04-13 07:56:01,833 - INFO - 📺 Found: Sony Ten Sports 1 HD
+2026-04-13 07:56:01,833 - INFO - 📺 Found: Sony Ten Sports 5 HD 
+2026-04-13 07:56:01,833 - INFO - 📺 Found: Eurosport HD
+2026-04-13 07:56:01,833 - INFO - 📺 Found: Sony Ten Cricket
+2026-04-13 07:56:01,833 - INFO - 📺 Found: BFL | Live 1
+2026-04-13 07:56:01,833 - INFO - 📺 Found: BFL | Live 2
+2026-04-13 07:56:01,833 - INFO - 📺 Found: BFL | Live 3
+2026-04-13 07:56:02,940 - INFO - ✅ Rail cb7ea308... has 5 items
+2026-04-13 07:56:02,940 - INFO - 📺 Found: CNN
+2026-04-13 07:56:02,940 - INFO - 📺 Found: Independent TV
+2026-04-13 07:56:04,045 - INFO - ✅ Rail cceb01a3... has 11 items
+2026-04-13 07:56:04,045 - INFO - 📺 Found: Sony MAX 2
+2026-04-13 07:56:04,045 - INFO - 📺 Found: Sony MAX HD
+2026-04-13 07:56:04,045 - INFO - 📺 Found: Sony MAX
+2026-04-13 07:56:04,045 - INFO - 📺 Found: Sony PIX HD
+2026-04-13 07:56:04,045 - INFO - 📺 Found: B4U Movies APAC
+2026-04-13 07:56:04,045 - INFO - 📺 Found: & Pictures HD
+2026-04-13 07:56:04,045 - INFO - 📺 Found: Toffee Movies
+2026-04-13 07:56:04,045 - INFO - 📺 Found: Zee Bangla Cinema
+2026-04-13 07:56:04,045 - INFO - 📺 Found: Zee Cinema HD
+2026-04-13 07:56:04,046 - INFO - 📺 Found: Zee Action
+2026-04-13 07:56:04,046 - INFO - 📺 Found: Zee Bollywood
+2026-04-13 07:56:05,148 - INFO - ✅ Rail be7d4285... has 12 items
+2026-04-13 07:56:05,148 - INFO - 📺 Found: Zing
+2026-04-13 07:56:05,148 - INFO - 📺 Found: Zee Bangla
+2026-04-13 07:56:05,149 - INFO - 📺 Found: HUM
+2026-04-13 07:56:05,149 - INFO - 📺 Found: HUM Sitaray
+2026-04-13 07:56:05,149 - INFO - 📺 Found: HUM Masala
+2026-04-13 07:56:05,149 - INFO - 📺 Found: Sony Aath
+2026-04-13 07:56:05,149 - INFO - 📺 Found: B4U Music
+2026-04-13 07:56:05,149 - INFO - 📺 Found: Sony Entertainment Television
+2026-04-13 07:56:05,149 - INFO - 📺 Found: Sony Entertainment Television HD
+2026-04-13 07:56:05,149 - INFO - 📺 Found: Sony SAB HD
+2026-04-13 07:56:05,149 - INFO - 📺 Found: Zee TV HD
+2026-04-13 07:56:05,149 - INFO - 📺 Found: &TV HD
+2026-04-13 07:56:06,256 - INFO - ✅ Rail 84a2451d... has 11 items
+2026-04-13 07:56:06,256 - INFO - 📺 Found: Ekhon TV
+2026-04-13 07:56:06,256 - INFO - 📺 Found: TLC
+2026-04-13 07:56:06,257 - INFO - 📺 Found: TLC HD
+2026-04-13 07:56:06,257 - INFO - 📺 Found: Animal Planet HD
+2026-04-13 07:56:06,257 - INFO - 📺 Found: Animal Planet
+2026-04-13 07:56:06,257 - INFO - 📺 Found: Sony BBC Earth HD
+2026-04-13 07:56:06,257 - INFO - 📺 Found: Discovery HD
+2026-04-13 07:56:06,257 - INFO - 📺 Found: Discovery
+2026-04-13 07:56:06,257 - INFO - 📺 Found: Discovery Science
+2026-04-13 07:56:06,257 - INFO - 📺 Found: Discovery Turbo
+2026-04-13 07:56:06,257 - INFO - 📺 Found: Investigation Discovery HD
+2026-04-13 07:56:07,365 - INFO - ✅ Rail 36eff4e5... has 5 items
+2026-04-13 07:56:07,365 - INFO - 📺 Found: Cartoon Network HD +
+2026-04-13 07:56:07,365 - INFO - 📺 Found: Cartoon Network
+2026-04-13 07:56:07,365 - INFO - 📺 Found: POGO
+2026-04-13 07:56:07,365 - INFO - 📺 Found: Discovery Kids
+2026-04-13 07:56:07,366 - INFO - 📺 Found: Sony YAY
+2026-04-13 07:56:08,825 - INFO - ✅ Rail eb1b7daa... has 7 items
+2026-04-13 07:56:08,825 - INFO - 📺 Found: VIP Club
+2026-04-13 07:56:08,825 - INFO - 📺 Found: Jora Shaliker Ghor
+2026-04-13 07:56:08,825 - INFO - 📺 Found: Trump Card
+2026-04-13 07:56:08,826 - INFO - 📺 Found: Konna
+2026-04-13 07:56:08,826 - INFO - 📺 Found: Dirilis Ertugrul | Season 5
+2026-04-13 07:56:10,020 - INFO - ✅ Rail 032cc919... has 12 items
+2026-04-13 07:56:10,923 - INFO - ✅ Rail 5dd9604d... has 1 items
+2026-04-13 07:56:12,658 - INFO - ✅ Rail a9ebadf3... has 10 items
+2026-04-13 07:56:12,659 - INFO - 📺 Found: Sherlock
+2026-04-13 07:56:12,659 - INFO - 📺 Found: Agamikal
+2026-04-13 07:56:12,659 - INFO - 📺 Found: Pretty Thing
+2026-04-13 07:56:12,659 - INFO - 📺 Found: Omar
+2026-04-13 07:56:12,659 - INFO - 📺 Found: Kurulus Osman | Season 4
+2026-04-13 07:56:12,659 - INFO - 📺 Found: Wanted
+2026-04-13 07:56:12,659 - INFO - 📺 Found: Futani Babu 
+2026-04-13 07:56:12,659 - INFO - 📺 Found: Chawa Pawa
+2026-04-13 07:56:12,659 - INFO - 📺 Found: Adorer Bhai
+2026-04-13 07:56:14,038 - INFO - ✅ Rail 4f26c5b1... has 6 items
+2026-04-13 07:56:14,038 - INFO - 📺 Found: Dirilis Ertugrul | Season 4
+2026-04-13 07:56:14,038 - INFO - 📺 Found: Dirilis Ertugrul | Season 3
+2026-04-13 07:56:14,038 - INFO - 📺 Found: Dirilis Ertugrul | Season 2
+2026-04-13 07:56:14,038 - INFO - 📺 Found: Dirilis Ertugrul | Season 1
+2026-04-13 07:56:15,143 - INFO - ✅ Rail 0daea5c3... has 7 items
+2026-04-13 07:56:15,143 - INFO - 📺 Found: Summer Break
+2026-04-13 07:56:15,143 - INFO - 📺 Found: Kono Ek Bikele Holoud Shari
+2026-04-13 07:56:15,144 - INFO - 📺 Found: Jora Shalik
+2026-04-13 07:56:15,144 - INFO - 📺 Found: Mon Jorabo Tori Ghore
+2026-04-13 07:56:15,144 - INFO - 📺 Found: Lal Pata Neel Phool
+2026-04-13 07:56:15,144 - INFO - 📺 Found: Ek Sathe Tumi Ami
+2026-04-13 07:56:15,144 - INFO - 📺 Found: Prem Kamor
+2026-04-13 07:56:16,609 - INFO - ✅ Rail 4d5a1ba8... has 12 items
+2026-04-13 07:56:16,609 - INFO - 📺 Found: Cleaner
+2026-04-13 07:56:16,609 - INFO - 📺 Found: Memento
+2026-04-13 07:56:16,609 - INFO - 📺 Found: Godzilla
+2026-04-13 07:56:16,609 - INFO - 📺 Found: Kaliyugam 2064
+2026-04-13 07:56:16,609 - INFO - 📺 Found: Char Number Bou
+2026-04-13 07:56:16,609 - INFO - 📺 Found: Nissho Tumi Ami
+2026-04-13 07:56:16,609 - INFO - 📺 Found: Irar Poddo
+2026-04-13 07:56:17,712 - INFO - ✅ Rail d90c6aba... has 12 items
+2026-04-13 07:56:17,713 - INFO - 📺 Found: Khairul Basar
+2026-04-13 07:56:17,713 - INFO - 📺 Found: Afran Nisho
+2026-04-13 07:56:17,713 - INFO - 📺 Found:  Shakib Khan
+2026-04-13 07:56:17,713 - INFO - 📺 Found: Mosharraf Karim
+2026-04-13 07:56:17,713 - INFO - 📺 Found: Arosh Khan
+2026-04-13 07:56:17,713 - INFO - 📺 Found: Farhan Ahmed Jovan
+2026-04-13 07:56:17,713 - INFO - 📺 Found: Tanjin Tisha
+2026-04-13 07:56:17,713 - INFO - 📺 Found:  Mehazabien Chowdhury
+2026-04-13 07:56:17,713 - INFO - 📺 Found: Tahsan Khan
+2026-04-13 07:56:17,713 - INFO - 📺 Found: Zaher Alvi
+2026-04-13 07:56:17,713 - INFO - 📺 Found: Yash Rohan
+2026-04-13 07:56:17,714 - INFO - 📺 Found: Ziaul Faruq Apurba
+2026-04-13 07:56:18,818 - INFO - ✅ Rail 2ad849ea... has 12 items
+2026-04-13 07:56:18,818 - INFO - 📺 Found: English Premier League
+2026-04-13 07:56:18,818 - INFO - 📺 Found: Chelsea v Man City | Match 318
+2026-04-13 07:56:18,818 - INFO - 📺 Found: Nottm Forest v Aston Villa | Match 317
+2026-04-13 07:56:18,818 - INFO - 📺 Found: Sunderland v Tottenham | Match 316
+2026-04-13 07:56:18,819 - INFO - 📺 Found: Crystal Palace v Newcastle | Match 315
+2026-04-13 07:56:18,819 - INFO - 📺 Found: Liverpool v Fulham | Match 314
+2026-04-13 07:56:18,819 - INFO - 📺 Found: Burnley v Brighton | Match 313
+2026-04-13 07:56:18,819 - INFO - 📺 Found: Brentford v Everton | Match 312
+2026-04-13 07:56:18,819 - INFO - 📺 Found: Arsenal v Bournemouth | Match 311
+2026-04-13 07:56:18,819 - INFO - 📺 Found: West Ham v Wolves | Match 310
+2026-04-13 07:56:18,819 - INFO - 📺 Found: Tottenham v Nottm Forest | Match 309
+2026-04-13 07:56:18,819 - INFO - 📺 Found: Aston Villa v West Ham | Match 308
+2026-04-13 07:56:19,926 - INFO - ✅ Rail eb1b7daa... has 7 items
+2026-04-13 07:56:21,030 - INFO - ✅ Rail eb1b7daa... has 7 items
+2026-04-13 07:56:22,137 - INFO - ✅ Rail 032cc919... has 12 items
+2026-04-13 07:56:23,246 - INFO - ✅ Rail 032cc919... has 12 items
+2026-04-13 07:56:24,082 - INFO - ✅ Rail 5dd9604d... has 1 items
+2026-04-13 07:56:24,912 - INFO - ✅ Rail 5dd9604d... has 1 items
+2026-04-13 07:56:26,018 - INFO - ✅ Rail eb1b7daa... has 7 items
+2026-04-13 07:56:27,122 - INFO - ✅ Rail 032cc919... has 12 items
+2026-04-13 07:56:27,950 - INFO - ✅ Rail 5dd9604d... has 1 items
+2026-04-13 07:56:28,451 - INFO - 📺 Total channels found: 123
+2026-04-13 07:56:28,451 - INFO - 📝 Generating playlist: playlists/toffee_playlist.m3u
+2026-04-13 07:56:28,452 - INFO - 🔄 Processing 1/123: Channel i
+2026-04-13 07:56:29,671 - WARNING - ❌ No cookie for Channel i
+2026-04-13 07:56:29,671 - INFO - 🔄 Processing 2/123: Nexus TV
+2026-04-13 07:56:30,793 - WARNING - ❌ No cookie for Nexus TV
+2026-04-13 07:56:30,793 - INFO - 🔄 Processing 3/123: Channel S
+2026-04-13 07:56:31,897 - WARNING - ❌ No cookie for Channel S
+2026-04-13 07:56:31,897 - INFO - 🔄 Processing 4/123: Movie Bangla
+2026-04-13 07:56:33,008 - WARNING - ❌ No cookie for Movie Bangla
+2026-04-13 07:56:33,008 - INFO - 🔄 Processing 5/123: Asian TV
+2026-04-13 07:56:34,105 - WARNING - ❌ No cookie for Asian TV
+2026-04-13 07:56:34,105 - INFO - 🔄 Processing 6/123: Mohona TV
+2026-04-13 07:56:35,216 - WARNING - ❌ No cookie for Mohona TV
+2026-04-13 07:56:35,216 - INFO - 🔄 Processing 7/123: Desh TV
+2026-04-13 07:56:36,329 - WARNING - ❌ No cookie for Desh TV
+2026-04-13 07:56:36,329 - INFO - 🔄 Processing 8/123: Jamuna TV
+2026-04-13 07:56:37,447 - WARNING - ❌ No cookie for Jamuna TV
+2026-04-13 07:56:37,447 - INFO - 🔄 Processing 9/123: Bangla TV
+2026-04-13 07:56:38,568 - WARNING - ❌ No cookie for Bangla TV
+2026-04-13 07:56:38,568 - INFO - 🔄 Processing 10/123: Ekattor TV
+2026-04-13 07:56:39,687 - WARNING - ❌ No cookie for Ekattor TV
+2026-04-13 07:56:39,687 - INFO - 🔄 Processing 11/123: Somoy TV
+2026-04-13 07:56:40,788 - WARNING - ❌ No cookie for Somoy TV
+2026-04-13 07:56:40,788 - INFO - 🔄 Processing 12/123: Global TV
+2026-04-13 07:56:41,908 - WARNING - ❌ No cookie for Global TV
+2026-04-13 07:56:41,908 - INFO - 🔄 Processing 13/123: EPL channel 1
+2026-04-13 07:56:43,029 - WARNING - ❌ No cookie for EPL channel 1
+2026-04-13 07:56:43,029 - INFO - 🔄 Processing 14/123: EPL channel 2
+2026-04-13 07:56:44,145 - WARNING - ❌ No cookie for EPL channel 2
+2026-04-13 07:56:44,145 - INFO - 🔄 Processing 15/123: EPL channel 3
+2026-04-13 07:56:45,260 - WARNING - ❌ No cookie for EPL channel 3
+2026-04-13 07:56:45,260 - INFO - 🔄 Processing 16/123: EPL Channel 4
+2026-04-13 07:56:46,365 - WARNING - ❌ No cookie for EPL Channel 4
+2026-04-13 07:56:46,365 - INFO - 🔄 Processing 17/123: EPL Channel 5
+2026-04-13 07:56:47,465 - WARNING - ❌ No cookie for EPL Channel 5
+2026-04-13 07:56:47,465 - INFO - 🔄 Processing 18/123: EPL Channel 6
+2026-04-13 07:56:48,568 - WARNING - ❌ No cookie for EPL Channel 6
+2026-04-13 07:56:48,568 - INFO - 🔄 Processing 19/123: Sony Ten Sports 2 HD
+2026-04-13 07:56:49,682 - WARNING - ❌ No cookie for Sony Ten Sports 2 HD
+2026-04-13 07:56:49,682 - INFO - 🔄 Processing 20/123: Sony Ten Sports 1 HD
+2026-04-13 07:56:50,793 - WARNING - ❌ No cookie for Sony Ten Sports 1 HD
+2026-04-13 07:56:50,793 - INFO - 🔄 Processing 21/123: Sony Ten Sports 5 HD 
+2026-04-13 07:56:51,909 - WARNING - ❌ No cookie for Sony Ten Sports 5 HD 
+2026-04-13 07:56:51,909 - INFO - 🔄 Processing 22/123: Eurosport HD
+2026-04-13 07:56:53,013 - WARNING - ❌ No cookie for Eurosport HD
+2026-04-13 07:56:53,013 - INFO - 🔄 Processing 23/123: Sony Ten Cricket
+2026-04-13 07:56:54,109 - WARNING - ❌ No cookie for Sony Ten Cricket
+2026-04-13 07:56:54,109 - INFO - 🔄 Processing 24/123: BFL | Live 1
+2026-04-13 07:56:55,210 - WARNING - ❌ No cookie for BFL | Live 1
+2026-04-13 07:56:55,210 - INFO - 🔄 Processing 25/123: BFL | Live 2
+2026-04-13 07:56:56,331 - WARNING - ❌ No cookie for BFL | Live 2
+2026-04-13 07:56:56,331 - INFO - 🔄 Processing 26/123: BFL | Live 3
+2026-04-13 07:56:57,444 - WARNING - ❌ No cookie for BFL | Live 3
+2026-04-13 07:56:57,444 - INFO - 🔄 Processing 27/123: CNN
+2026-04-13 07:56:58,561 - WARNING - ❌ No cookie for CNN
+2026-04-13 07:56:58,561 - INFO - 🔄 Processing 28/123: Independent TV
+2026-04-13 07:56:59,680 - WARNING - ❌ No cookie for Independent TV
+2026-04-13 07:56:59,680 - INFO - 🔄 Processing 29/123: Sony MAX 2
+2026-04-13 07:57:00,782 - WARNING - ❌ No cookie for Sony MAX 2
+2026-04-13 07:57:00,782 - INFO - 🔄 Processing 30/123: Sony MAX HD
+2026-04-13 07:57:01,881 - WARNING - ❌ No cookie for Sony MAX HD
+2026-04-13 07:57:01,881 - INFO - 🔄 Processing 31/123: Sony MAX
+2026-04-13 07:57:02,987 - WARNING - ❌ No cookie for Sony MAX
+2026-04-13 07:57:02,988 - INFO - 🔄 Processing 32/123: Sony PIX HD
+2026-04-13 07:57:04,099 - WARNING - ❌ No cookie for Sony PIX HD
+2026-04-13 07:57:04,100 - INFO - 🔄 Processing 33/123: B4U Movies APAC
+2026-04-13 07:57:05,216 - WARNING - ❌ No cookie for B4U Movies APAC
+2026-04-13 07:57:05,216 - INFO - 🔄 Processing 34/123: & Pictures HD
+2026-04-13 07:57:06,321 - WARNING - ❌ No cookie for & Pictures HD
+2026-04-13 07:57:06,321 - INFO - 🔄 Processing 35/123: Toffee Movies
+2026-04-13 07:57:07,415 - WARNING - ❌ No cookie for Toffee Movies
+2026-04-13 07:57:07,415 - INFO - 🔄 Processing 36/123: Zee Bangla Cinema
+2026-04-13 07:57:08,513 - WARNING - ❌ No cookie for Zee Bangla Cinema
+2026-04-13 07:57:08,513 - INFO - 🔄 Processing 37/123: Zee Cinema HD
+2026-04-13 07:57:09,616 - WARNING - ❌ No cookie for Zee Cinema HD
+2026-04-13 07:57:09,616 - INFO - 🔄 Processing 38/123: Zee Action
+2026-04-13 07:57:10,735 - WARNING - ❌ No cookie for Zee Action
+2026-04-13 07:57:10,735 - INFO - 🔄 Processing 39/123: Zee Bollywood
+2026-04-13 07:57:11,860 - WARNING - ❌ No cookie for Zee Bollywood
+2026-04-13 07:57:11,860 - INFO - 🔄 Processing 40/123: Zing
+2026-04-13 07:57:12,966 - WARNING - ❌ No cookie for Zing
+2026-04-13 07:57:12,966 - INFO - 🔄 Processing 41/123: Zee Bangla
+2026-04-13 07:57:14,063 - WARNING - ❌ No cookie for Zee Bangla
+2026-04-13 07:57:14,064 - INFO - 🔄 Processing 42/123: HUM
+2026-04-13 07:57:15,166 - WARNING - ❌ No cookie for HUM
+2026-04-13 07:57:15,166 - INFO - 🔄 Processing 43/123: HUM Sitaray
+2026-04-13 07:57:16,271 - WARNING - ❌ No cookie for HUM Sitaray
+2026-04-13 07:57:16,271 - INFO - 🔄 Processing 44/123: HUM Masala
+2026-04-13 07:57:17,388 - WARNING - ❌ No cookie for HUM Masala
+2026-04-13 07:57:17,389 - INFO - 🔄 Processing 45/123: Sony Aath
+2026-04-13 07:57:18,507 - WARNING - ❌ No cookie for Sony Aath
+2026-04-13 07:57:18,507 - INFO - 🔄 Processing 46/123: B4U Music
+2026-04-13 07:57:19,613 - WARNING - ❌ No cookie for B4U Music
+2026-04-13 07:57:19,613 - INFO - 🔄 Processing 47/123: Sony Entertainment Television
+2026-04-13 07:57:20,727 - WARNING - ❌ No cookie for Sony Entertainment Television
+2026-04-13 07:57:20,727 - INFO - 🔄 Processing 48/123: Sony Entertainment Television HD
+2026-04-13 07:57:21,824 - WARNING - ❌ No cookie for Sony Entertainment Television HD
+2026-04-13 07:57:21,824 - INFO - 🔄 Processing 49/123: Sony SAB HD
+2026-04-13 07:57:22,937 - WARNING - ❌ No cookie for Sony SAB HD
+2026-04-13 07:57:22,937 - INFO - 🔄 Processing 50/123: Zee TV HD
+2026-04-13 07:57:24,051 - WARNING - ❌ No cookie for Zee TV HD
+2026-04-13 07:57:24,052 - INFO - 🔄 Processing 51/123: &TV HD
+2026-04-13 07:57:25,168 - WARNING - ❌ No cookie for &TV HD
+2026-04-13 07:57:25,168 - INFO - 🔄 Processing 52/123: Ekhon TV
+2026-04-13 07:57:26,276 - WARNING - ❌ No cookie for Ekhon TV
+2026-04-13 07:57:26,276 - INFO - 🔄 Processing 53/123: TLC
+2026-04-13 07:57:27,377 - WARNING - ❌ No cookie for TLC
+2026-04-13 07:57:27,377 - INFO - 🔄 Processing 54/123: TLC HD
+2026-04-13 07:57:28,486 - WARNING - ❌ No cookie for TLC HD
+2026-04-13 07:57:28,486 - INFO - 🔄 Processing 55/123: Animal Planet HD
+2026-04-13 07:57:29,601 - WARNING - ❌ No cookie for Animal Planet HD
+2026-04-13 07:57:29,601 - INFO - 🔄 Processing 56/123: Animal Planet
+2026-04-13 07:57:30,718 - WARNING - ❌ No cookie for Animal Planet
+2026-04-13 07:57:30,718 - INFO - 🔄 Processing 57/123: Sony BBC Earth HD
+2026-04-13 07:57:31,820 - WARNING - ❌ No cookie for Sony BBC Earth HD
+2026-04-13 07:57:31,820 - INFO - 🔄 Processing 58/123: Discovery HD
+2026-04-13 07:57:32,931 - WARNING - ❌ No cookie for Discovery HD
+2026-04-13 07:57:32,931 - INFO - 🔄 Processing 59/123: Discovery
+2026-04-13 07:57:34,043 - WARNING - ❌ No cookie for Discovery
+2026-04-13 07:57:34,043 - INFO - 🔄 Processing 60/123: Discovery Science
+2026-04-13 07:57:35,156 - WARNING - ❌ No cookie for Discovery Science
+2026-04-13 07:57:35,156 - INFO - 🔄 Processing 61/123: Discovery Turbo
+2026-04-13 07:57:36,269 - WARNING - ❌ No cookie for Discovery Turbo
+2026-04-13 07:57:36,269 - INFO - 🔄 Processing 62/123: Investigation Discovery HD
+2026-04-13 07:57:37,382 - WARNING - ❌ No cookie for Investigation Discovery HD
+2026-04-13 07:57:37,382 - INFO - 🔄 Processing 63/123: Cartoon Network HD +
+2026-04-13 07:57:38,513 - WARNING - ❌ No cookie for Cartoon Network HD +
+2026-04-13 07:57:38,513 - INFO - 🔄 Processing 64/123: Cartoon Network
+2026-04-13 07:57:39,635 - WARNING - ❌ No cookie for Cartoon Network
+2026-04-13 07:57:39,635 - INFO - 🔄 Processing 65/123: POGO
+2026-04-13 07:57:40,750 - WARNING - ❌ No cookie for POGO
+2026-04-13 07:57:40,750 - INFO - 🔄 Processing 66/123: Discovery Kids
+2026-04-13 07:57:41,867 - WARNING - ❌ No cookie for Discovery Kids
+2026-04-13 07:57:41,867 - INFO - 🔄 Processing 67/123: Sony YAY
+2026-04-13 07:57:42,983 - WARNING - ❌ No cookie for Sony YAY
+2026-04-13 07:57:42,983 - INFO - 🔄 Processing 68/123: VIP Club
+2026-04-13 07:57:44,113 - WARNING - ❌ No cookie for VIP Club
+2026-04-13 07:57:44,113 - INFO - 🔄 Processing 69/123: Jora Shaliker Ghor
+2026-04-13 07:57:45,239 - WARNING - ❌ No cookie for Jora Shaliker Ghor
+2026-04-13 07:57:45,239 - INFO - 🔄 Processing 70/123: Trump Card
+2026-04-13 07:57:46,351 - WARNING - ❌ No cookie for Trump Card
+2026-04-13 07:57:46,351 - INFO - 🔄 Processing 71/123: Konna
+2026-04-13 07:57:47,471 - WARNING - ❌ No cookie for Konna
+2026-04-13 07:57:47,471 - INFO - 🔄 Processing 72/123: Dirilis Ertugrul | Season 5
+2026-04-13 07:57:48,608 - WARNING - ❌ No cookie for Dirilis Ertugrul | Season 5
+2026-04-13 07:57:48,608 - INFO - 🔄 Processing 73/123: Sherlock
+2026-04-13 07:57:49,728 - WARNING - ❌ No cookie for Sherlock
+2026-04-13 07:57:49,728 - INFO - 🔄 Processing 74/123: Agamikal
+2026-04-13 07:57:50,858 - WARNING - ❌ No cookie for Agamikal
+2026-04-13 07:57:50,859 - INFO - 🔄 Processing 75/123: Pretty Thing
+2026-04-13 07:57:51,986 - WARNING - ❌ No cookie for Pretty Thing
+2026-04-13 07:57:51,986 - INFO - 🔄 Processing 76/123: Omar
+2026-04-13 07:57:53,117 - WARNING - ❌ No cookie for Omar
+2026-04-13 07:57:53,117 - INFO - 🔄 Processing 77/123: Kurulus Osman | Season 4
+2026-04-13 07:57:54,244 - WARNING - ❌ No cookie for Kurulus Osman | Season 4
+2026-04-13 07:57:54,245 - INFO - 🔄 Processing 78/123: Wanted
+2026-04-13 07:57:55,356 - WARNING - ❌ No cookie for Wanted
+2026-04-13 07:57:55,357 - INFO - 🔄 Processing 79/123: Futani Babu 
+2026-04-13 07:57:56,495 - WARNING - ❌ No cookie for Futani Babu 
+2026-04-13 07:57:56,496 - INFO - 🔄 Processing 80/123: Chawa Pawa
+2026-04-13 07:57:57,610 - WARNING - ❌ No cookie for Chawa Pawa
+2026-04-13 07:57:57,611 - INFO - 🔄 Processing 81/123: Adorer Bhai
+2026-04-13 07:57:58,741 - WARNING - ❌ No cookie for Adorer Bhai
+2026-04-13 07:57:58,741 - INFO - 🔄 Processing 82/123: Dirilis Ertugrul | Season 4
+2026-04-13 07:57:59,872 - WARNING - ❌ No cookie for Dirilis Ertugrul | Season 4
+2026-04-13 07:57:59,872 - INFO - 🔄 Processing 83/123: Dirilis Ertugrul | Season 3
+2026-04-13 07:58:00,986 - WARNING - ❌ No cookie for Dirilis Ertugrul | Season 3
+2026-04-13 07:58:00,986 - INFO - 🔄 Processing 84/123: Dirilis Ertugrul | Season 2
+2026-04-13 07:58:02,102 - WARNING - ❌ No cookie for Dirilis Ertugrul | Season 2
+2026-04-13 07:58:02,102 - INFO - 🔄 Processing 85/123: Dirilis Ertugrul | Season 1
+2026-04-13 07:58:03,242 - WARNING - ❌ No cookie for Dirilis Ertugrul | Season 1
+2026-04-13 07:58:03,242 - INFO - 🔄 Processing 86/123: Summer Break
+2026-04-13 07:58:04,357 - WARNING - ❌ No cookie for Summer Break
+2026-04-13 07:58:04,358 - INFO - 🔄 Processing 87/123: Kono Ek Bikele Holoud Shari
+2026-04-13 07:58:05,489 - WARNING - ❌ No cookie for Kono Ek Bikele Holoud Shari
+2026-04-13 07:58:05,489 - INFO - 🔄 Processing 88/123: Jora Shalik
+2026-04-13 07:58:06,633 - WARNING - ❌ No cookie for Jora Shalik
+2026-04-13 07:58:06,634 - INFO - 🔄 Processing 89/123: Mon Jorabo Tori Ghore
+2026-04-13 07:58:07,751 - WARNING - ❌ No cookie for Mon Jorabo Tori Ghore
+2026-04-13 07:58:07,751 - INFO - 🔄 Processing 90/123: Lal Pata Neel Phool
+2026-04-13 07:58:08,866 - WARNING - ❌ No cookie for Lal Pata Neel Phool
+2026-04-13 07:58:08,866 - INFO - 🔄 Processing 91/123: Ek Sathe Tumi Ami
+2026-04-13 07:58:09,999 - WARNING - ❌ No cookie for Ek Sathe Tumi Ami
+2026-04-13 07:58:09,999 - INFO - 🔄 Processing 92/123: Prem Kamor
+2026-04-13 07:58:11,139 - WARNING - ❌ No cookie for Prem Kamor
+2026-04-13 07:58:11,139 - INFO - 🔄 Processing 93/123: Cleaner
+2026-04-13 07:58:12,269 - WARNING - ❌ No cookie for Cleaner
+2026-04-13 07:58:12,269 - INFO - 🔄 Processing 94/123: Memento
+2026-04-13 07:58:13,397 - WARNING - ❌ No cookie for Memento
+2026-04-13 07:58:13,397 - INFO - 🔄 Processing 95/123: Godzilla
+2026-04-13 07:58:14,515 - WARNING - ❌ No cookie for Godzilla
+2026-04-13 07:58:14,515 - INFO - 🔄 Processing 96/123: Kaliyugam 2064
+2026-04-13 07:58:15,634 - WARNING - ❌ No cookie for Kaliyugam 2064
+2026-04-13 07:58:15,634 - INFO - 🔄 Processing 97/123: Char Number Bou
+2026-04-13 07:58:16,758 - WARNING - ❌ No cookie for Char Number Bou
+2026-04-13 07:58:16,758 - INFO - 🔄 Processing 98/123: Nissho Tumi Ami
+2026-04-13 07:58:17,911 - WARNING - ❌ No cookie for Nissho Tumi Ami
+2026-04-13 07:58:17,912 - INFO - 🔄 Processing 99/123: Irar Poddo
+2026-04-13 07:58:19,040 - WARNING - ❌ No cookie for Irar Poddo
+2026-04-13 07:58:19,041 - INFO - 🔄 Processing 100/123: Khairul Basar
+2026-04-13 07:58:20,154 - WARNING - ❌ No cookie for Khairul Basar
+2026-04-13 07:58:20,154 - INFO - 🔄 Processing 101/123: Afran Nisho
+2026-04-13 07:58:21,269 - WARNING - ❌ No cookie for Afran Nisho
+2026-04-13 07:58:21,270 - INFO - 🔄 Processing 102/123:  Shakib Khan
+2026-04-13 07:58:22,408 - WARNING - ❌ No cookie for  Shakib Khan
+2026-04-13 07:58:22,408 - INFO - 🔄 Processing 103/123: Mosharraf Karim
+2026-04-13 07:58:23,524 - WARNING - ❌ No cookie for Mosharraf Karim
+2026-04-13 07:58:23,524 - INFO - 🔄 Processing 104/123: Arosh Khan
+2026-04-13 07:58:24,653 - WARNING - ❌ No cookie for Arosh Khan
+2026-04-13 07:58:24,653 - INFO - 🔄 Processing 105/123: Farhan Ahmed Jovan
+2026-04-13 07:58:25,793 - WARNING - ❌ No cookie for Farhan Ahmed Jovan
+2026-04-13 07:58:25,793 - INFO - 🔄 Processing 106/123: Tanjin Tisha
+2026-04-13 07:58:26,938 - WARNING - ❌ No cookie for Tanjin Tisha
+2026-04-13 07:58:26,938 - INFO - 🔄 Processing 107/123:  Mehazabien Chowdhury
+2026-04-13 07:58:28,068 - WARNING - ❌ No cookie for  Mehazabien Chowdhury
+2026-04-13 07:58:28,068 - INFO - 🔄 Processing 108/123: Tahsan Khan
+2026-04-13 07:58:29,192 - WARNING - ❌ No cookie for Tahsan Khan
+2026-04-13 07:58:29,192 - INFO - 🔄 Processing 109/123: Zaher Alvi
+2026-04-13 07:58:30,299 - WARNING - ❌ No cookie for Zaher Alvi
+2026-04-13 07:58:30,299 - INFO - 🔄 Processing 110/123: Yash Rohan
+2026-04-13 07:58:31,437 - WARNING - ❌ No cookie for Yash Rohan
+2026-04-13 07:58:31,437 - INFO - 🔄 Processing 111/123: Ziaul Faruq Apurba
+2026-04-13 07:58:32,588 - WARNING - ❌ No cookie for Ziaul Faruq Apurba
+2026-04-13 07:58:32,588 - INFO - 🔄 Processing 112/123: English Premier League
+2026-04-13 07:58:33,745 - WARNING - ❌ No cookie for English Premier League
+2026-04-13 07:58:33,745 - INFO - 🔄 Processing 113/123: Chelsea v Man City | Match 318
+2026-04-13 07:58:34,856 - WARNING - ❌ No cookie for Chelsea v Man City | Match 318
+2026-04-13 07:58:34,856 - INFO - 🔄 Processing 114/123: Nottm Forest v Aston Villa | Match 317
+2026-04-13 07:58:35,981 - WARNING - ❌ No cookie for Nottm Forest v Aston Villa | Match 317
+2026-04-13 07:58:35,981 - INFO - 🔄 Processing 115/123: Sunderland v Tottenham | Match 316
+2026-04-13 07:58:37,090 - WARNING - ❌ No cookie for Sunderland v Tottenham | Match 316
+2026-04-13 07:58:37,090 - INFO - 🔄 Processing 116/123: Crystal Palace v Newcastle | Match 315
+2026-04-13 07:58:38,228 - WARNING - ❌ No cookie for Crystal Palace v Newcastle | Match 315
+2026-04-13 07:58:38,228 - INFO - 🔄 Processing 117/123: Liverpool v Fulham | Match 314
+2026-04-13 07:58:39,360 - WARNING - ❌ No cookie for Liverpool v Fulham | Match 314
+2026-04-13 07:58:39,360 - INFO - 🔄 Processing 118/123: Burnley v Brighton | Match 313
+2026-04-13 07:58:40,488 - WARNING - ❌ No cookie for Burnley v Brighton | Match 313
+2026-04-13 07:58:40,488 - INFO - 🔄 Processing 119/123: Brentford v Everton | Match 312
+2026-04-13 07:58:41,634 - WARNING - ❌ No cookie for Brentford v Everton | Match 312
+2026-04-13 07:58:41,634 - INFO - 🔄 Processing 120/123: Arsenal v Bournemouth | Match 311
+2026-04-13 07:58:42,766 - WARNING - ❌ No cookie for Arsenal v Bournemouth | Match 311
+2026-04-13 07:58:42,766 - INFO - 🔄 Processing 121/123: West Ham v Wolves | Match 310
+2026-04-13 07:58:43,888 - WARNING - ❌ No cookie for West Ham v Wolves | Match 310
+2026-04-13 07:58:43,888 - INFO - 🔄 Processing 122/123: Tottenham v Nottm Forest | Match 309
+2026-04-13 07:58:45,010 - WARNING - ❌ No cookie for Tottenham v Nottm Forest | Match 309
+2026-04-13 07:58:45,010 - INFO - 🔄 Processing 123/123: Aston Villa v West Ham | Match 308
+2026-04-13 07:58:46,147 - WARNING - ❌ No cookie for Aston Villa v West Ham | Match 308
+2026-04-13 07:58:46,148 - INFO - ✅ Playlist generated: playlists/toffee_playlist.m3u
+2026-04-13 07:58:46,148 - INFO - 📊 Working: 0, Failed: 123
+2026-04-13 07:58:46,148 - WARNING - ⚠️ No cookies obtained - proxy might not be from Bangladesh
+2026-04-13 07:58:46,148 - INFO - ⏱️ Runtime: 204.89 seconds
